@@ -1,0 +1,5 @@
+VehicleID,LicensePlate,Model,Year,Type,SeatingCapacity,Status,RegistrationDate,LastServiceDate
+1,ABC-123,Toyota Camry,2020,Sedan,5,Available,2020-01-15,2024-09-01
+2,XYZ-456,Honda Civic,2019,Sedan,5,In-Service,2019-05-20,2024-08-15
+3,DEF-789,Ford Focus,2021,Hatchback,5,Maintenance,2021-03-10,2024-10-05
+4,GHI-012,Hyundai Elantra,2022,Sedan,5,Available,2022-07-25,2024-09-20
