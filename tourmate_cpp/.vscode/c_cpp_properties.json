@@ -4,14 +4,24 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/src/headers"
+                "${workspaceFolder}/src/headers",
+                "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/*/include",
+                "C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/*/include",
+                "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/*/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/*/ucrt",
+                "C:/Program Files (x86)/Windows Kits/10/Include/*/shared",
+                "C:/mingw64/include",
+                "C:/msys64/mingw64/include",
+                "C:/msys64/mingw64/include/c++/*"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "_WIN32",
+                "_WIN64"
             ],
-            "windowsSdkVersion": "10.0.19041.0",
+            "windowsSdkVersion": "10.0.22000.0",
             "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++11",
