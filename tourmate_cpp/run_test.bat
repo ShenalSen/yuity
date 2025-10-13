@@ -2,17 +2,17 @@
 echo === Running Tourmate Core Data Structures Test ===
 echo.
 
-if not exist "build\tourmate_test.exe" (
-    echo Error: Executable not found. Please build the project first.
+if not exist "build\tourmate_core_test.exe" (
+    echo Error: Core test executable not found. Please build the project first.
     echo Run: build.bat
     pause
     exit /b 1
 )
 
-echo Running test...
+echo Running core data structures test...
 echo.
-build\tourmate_test.exe
+build\tourmate_core_test.exe
 
 echo.
-echo === Test Completed ===
+echo === Core Test Completed ===
 pause
