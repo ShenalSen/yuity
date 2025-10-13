@@ -41,6 +41,10 @@ echo - Compiling VehicleManager.cpp...
 g++ -c -std=c++11 -I"src/headers" "src/source/VehicleManager.cpp" -o "build/VehicleManager.o"
 if errorlevel 1 goto error
 
+echo - Compiling SalesManager.cpp...
+g++ -c -std=c++11 -I"src/headers" "src/source/SalesManager.cpp" -o "build/SalesManager.o"
+if errorlevel 1 goto error
+
 echo.
 echo Linking executables...
 
@@ -68,17 +72,37 @@ if errorlevel 1 goto error
 g++ -std=c++11 build/Vehicle.o build/Sales.o build/User.o build/Utilities.o build/AuthenticationManager.o build/VehicleManager.o build/test_vehicle.o -o build/tourmate_vehicle_test.exe
 if errorlevel 1 goto error
 
+REM Sales management test executable
+echo - Linking sales management test...
+g++ -c -std=c++11 -I"src/headers" "test_sales.cpp" -o "build/test_sales.o"
+if errorlevel 1 goto error
+
+g++ -std=c++11 build/Vehicle.o build/Sales.o build/User.o build/Utilities.o build/AuthenticationManager.o build/VehicleManager.o build/SalesManager.o build/test_sales.o -o build/tourmate_sales_test.exe
+if errorlevel 1 goto error
+
+REM Sample data generator
+echo - Linking sample data generator...
+g++ -c -std=c++11 -I"src/headers" "generate_sample_data.cpp" -o "build/generate_sample_data.o"
+if errorlevel 1 goto error
+
+g++ -std=c++11 build/Vehicle.o build/Sales.o build/User.o build/Utilities.o build/AuthenticationManager.o build/VehicleManager.o build/SalesManager.o build/generate_sample_data.o -o build/generate_sample_data.exe
+if errorlevel 1 goto error
+
 echo.
 echo === Build Successful! ===
 echo Executables created:
 echo   - build/tourmate_core_test.exe (Core data structures test)
 echo   - build/tourmate_auth_test.exe (Authentication module test)
 echo   - build/tourmate_vehicle_test.exe (Vehicle management test)
+echo   - build/tourmate_sales_test.exe (Sales management test)
+echo   - build/generate_sample_data.exe (Sample data generator)
 echo.
 echo To run tests:
 echo   - Core test:           build\tourmate_core_test.exe
 echo   - Authentication test: build\tourmate_auth_test.exe
 echo   - Vehicle test:        build\tourmate_vehicle_test.exe
+echo   - Sales test:          build\tourmate_sales_test.exe
+echo   - Generate data:       build\generate_sample_data.exe
 echo.
 pause
 exit /b 0
