@@ -18,7 +18,7 @@ string currentRole = "";
 // Function prototypes
 void displayMainMenu();
 void handleMainMenu();
-void displayLoginMenu();
+bool displayLoginMenu();  // Changed return type to bool
 bool login(string username, string password);
 void logout();
 void displayVehicleMenu();
@@ -36,17 +36,14 @@ int main() {
     cout << "      WELCOME TO TOUR MATE VEHICLE SYSTEM      \n";
     cout << "===============================================\n\n";
     
-    while (true) {
+    bool exitProgram = false;
+    
+    while (!exitProgram) {
         if (!isLoggedIn) {
-            displayLoginMenu();
+            exitProgram = displayLoginMenu(); // Use the return value to determine if we should exit
         } else {
             displayMainMenu();
             handleMainMenu();
-        }
-        
-        // If the user chooses to exit
-        if (!isLoggedIn && currentUser == "") {
-            break;
         }
     }
     
@@ -55,7 +52,7 @@ int main() {
 }
 
 // Display the login menu
-void displayLoginMenu() {
+bool displayLoginMenu() {
     string username, password;
     int choice;
     
@@ -69,7 +66,7 @@ void displayLoginMenu() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input. Please enter a number.\n";
         pressEnterToContinue();
-        return;
+        return false; // Return to main loop without exiting
     }
     
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -85,19 +82,24 @@ void displayLoginMenu() {
                 cout << "\nLogin successful! Welcome, " << currentUser << "!\n";
                 isLoggedIn = true;
                 pressEnterToContinue();
+                return false; // Return to main loop without exiting
             } else {
                 cout << "\nInvalid username or password. Please try again.\n";
                 pressEnterToContinue();
+                return false; // Return to main loop without exiting
             }
             break;
         case 2:
-            currentUser = "";
-            break;
+            return true; // Signal to exit the program
         default:
             cout << "Invalid choice. Please try again.\n";
             pressEnterToContinue();
+            return false; // Return to main loop without exiting
     }
+    
+    return false; // Default return to continue the program
 }
+
 
 // Login function - placeholder 
 bool login(string username, string password) {
