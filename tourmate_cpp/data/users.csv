@@ -1,4 +1,0 @@
-UserID,Username,Password,Role,LastLogin,AccountStatus
-1,admin,admin123,Admin,2024-10-12 08:00:00,Active
-2,operator,oper456,Operator,2024-10-11 14:30:00,Active
-3,viewer,view789,Viewer,2024-10-10 10:15:00,Active

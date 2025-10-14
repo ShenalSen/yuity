@@ -1,4 +1,0 @@
-SalesID,VehicleID,CustomerName,CustomerContact,StartLocation,EndLocation,TripDate,TripTime,Duration,FareAmount,PaymentStatus,SalesRep
-1,1,John Smith,+1234567890,Airport,Downtown Hotel,2024-10-10,14:30,1.5,25.50,Paid,Sarah Johnson
-2,2,Mary Wilson,+1987654321,City Center,Shopping Mall,2024-10-11,09:15,2.0,35.00,Paid,Mike Davis
-3,4,Robert Brown,+1555666777,Train Station,Business District,2024-10-11,16:45,0.75,18.75,Pending,Sarah Johnson
